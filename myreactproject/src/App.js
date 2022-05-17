@@ -1,15 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
+import TodosList from "../src/components/TodosList"
 import './App.css';
 
 const App = () => {
+  const[input, setInput] = useState("");
+  const[todos, setTodos] = useState([]);
+
   return (
     <div className="container">
       <div className="app-wrapper">
         <div>
           <Header/>
-          <Form/>
+          <Form
+          input={input}
+          setInput={setInput}
+          todos={todos}
+          setTodos={setTodos}
+          />
+        </div>
+        <div><TodosList todos={todos} setTodos={setTodos}/>
         </div>
       </div>      
     </div>
