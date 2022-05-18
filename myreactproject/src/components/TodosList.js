@@ -11,7 +11,6 @@ const TodosList = ({todos, setTodos}) =>{
             className="list"
             onChange={(event) => event.preventDefault()}
             />
-
         </li>
         ))}
     </div>
